@@ -1,0 +1,144 @@
+
+
+
+!=============================================================================
+!
+!      You probably don't want to change anything after this point.
+!
+!=============================================================================
+
+
+XScreenSaver.pointerPollTime:		0:00:05
+XScreenSaver.pointerHysteresis:		10
+XScreenSaver.initialDelay:		0:00:00
+XScreenSaver.windowCreationTimeout:	0:00:30
+XScreenSaver.bourneShell:		/bin/sh
+
+
+! Resources for the password and splash-screen dialog boxes of
+! the "xscreensaver" daemon.
+!
+*Dialog.headingFont:		*-helvetica-bold-r-*-*-*-180-*-*-*-iso8859-1
+*Dialog.bodyFont:		*-helvetica-bold-r-*-*-*-140-*-*-*-iso8859-1
+*Dialog.labelFont:		*-helvetica-bold-r-*-*-*-140-*-*-*-iso8859-1
+*Dialog.unameFont:		*-helvetica-bold-r-*-*-*-120-*-*-*-iso8859-1
+*Dialog.buttonFont:		*-helvetica-bold-r-*-*-*-140-*-*-*-iso8859-1
+*Dialog.dateFont:		*-helvetica-medium-r-*-*-*-80-*-*-*-iso8859-1
+! Helvetica asterisks look terrible.
+!*passwd.passwdFont:		*-helvetica-medium-r-*-*-*-140-*-*-*-iso8859-1
+*passwd.passwdFont:		*-courier-medium-r-*-*-*-140-*-*-*-iso8859-1
+
+*Dialog.foreground:		#000000
+*Dialog.background:		#E6E6E6
+*Dialog.Button.foreground:	#000000
+*Dialog.Button.background:	#F5F5F5
+!*Dialog.Button.pointBackground: #EAEAEA
+!*Dialog.Button.clickBackground: #C3C3C3
+*Dialog.text.foreground:	#000000
+*Dialog.text.background:	#FFFFFF
+*passwd.thermometer.foreground:	#4464AC
+*passwd.thermometer.background:	#FFFFFF
+*Dialog.topShadowColor:		#FFFFFF
+*Dialog.bottomShadowColor:	#CECECE
+*Dialog.logo.width:		210
+*Dialog.logo.height:		210
+*Dialog.internalBorderWidth:	24
+*Dialog.borderWidth:		1
+*Dialog.shadowThickness:	2
+
+*passwd.heading.label:		XScreenSaver %s
+*passwd.body.label:		This screen is locked.
+*passwd.unlock.label:		OK
+*passwd.login.label:		New Login
+*passwd.user.label:		Username:
+*passwd.thermometer.width:	8
+*passwd.asterisks:              True
+*passwd.uname:                  True
+
+*splash.heading.label:		XScreenSaver %s
+*splash.body.label:		Copyright © 1991-2012 by
+*splash.body2.label:		Jamie Zawinski <jwz@jwz.org>
+*splash.demo.label:		Settings
+*splash.help.label:		Help
+
+
+!=============================================================================
+!
+! Pretty names for the hacks that have unusual capitalization.
+!
+!=============================================================================
+
+*hacks.antinspect.name:     AntInspect
+*hacks.antmaze.name:        AntMaze
+*hacks.antspotlight.name:   AntSpotlight
+*hacks.blinkbox.name:       BlinkBox
+*hacks.blitspin.name:       BlitSpin
+*hacks.blocktube.name:      BlockTube
+*hacks.bouncingcow.name:    BouncingCow
+*hacks.boxfit.name:         BoxFit
+*hacks.bsod.name:           BSOD
+*hacks.bubble3d.name:       Bubble3D
+*hacks.ccurve.name:         CCurve
+*hacks.cloudlife.name:      CloudLife
+*hacks.companioncube.name:  CompanionCube
+*hacks.cubestorm.name:      CubeStorm
+*hacks.cubicgrid.name:      CubicGrid
+*hacks.cwaves.name:         CWaves
+*hacks.dangerball.name:     DangerBall
+*hacks.decayscreen.name:    DecayScreen
+*hacks.dnalogo.name:        DNA Logo
+*hacks.euler2d.name:        Euler2D
+*hacks.fadeplot.name:       FadePlot
+*hacks.flipflop.name:       FlipFlop
+*hacks.flipscreen3d.name:   FlipScreen3D
+*hacks.fliptext.name:       FlipText
+*hacks.fluidballs.name:     FluidBalls
+*hacks.flyingtoasters.name: FlyingToasters
+*hacks.fontglide.name:      FontGlide
+*hacks.fuzzyflakes.name:    FuzzyFlakes
+*hacks.gflux.name:          GFlux
+*hacks.gleidescope.name:    Gleidescope
+*hacks.glforestfire.name:   GLForestFire
+*hacks.hyperball.name:      HyperBall
+*hacks.hypercube.name:      HyperCube
+*hacks.ifs.name:            IFS
+*hacks.imsmap.name:         IMSMap
+*hacks.jigglypuff.name:     JigglyPuff
+*hacks.juggler3d.name:      Juggler3D
+*hacks.lcdscrub.name:       LCDscrub
+*hacks.lmorph.name:         LMorph
+*hacks.m6502.name:          m6502
+*hacks.memscroller.name:    MemScroller
+*hacks.metaballs.name:      MetaBalls
+*hacks.mirrorblob.name:     MirrorBlob
+*hacks.moebiusgears.name:   MoebiusGears
+*hacks.morph3d.name:        Morph3D
+*hacks.nerverot.name:       NerveRot
+*hacks.noseguy.name:        NoseGuy
+*hacks.popsquares.name:     PopSquares
+*hacks.rd-bomb.name:        RDbomb
+*hacks.rdbomb.name:         RDbomb
+*hacks.rotzoomer.name:      RotZoomer
+*hacks.rubikblocks.name:    RubikBlocks
+*hacks.sballs.name:         SBalls
+*hacks.shadebobs.name:      ShadeBobs
+*hacks.sierpinski3d.name:   Sierpinski3D
+*hacks.skytentacles.name:   SkyTentacles
+*hacks.slidescreen.name:    SlideScreen
+*hacks.speedmine.name:      SpeedMine
+*hacks.starwars.name:       StarWars
+*hacks.stonerview.name:     StonerView
+*hacks.t3d.name:            T3D
+*hacks.timetunnel.name:     TimeTunnel
+*hacks.topblock.name:       TopBlock
+*hacks.tronbit.name:        TronBit
+*hacks.vidwhacker.name:     VidWhacker
+*hacks.webcollage.name:     WebCollage
+*hacks.whirlwindwarp.name:  WhirlWindWarp
+*hacks.xanalogtv.name:      XAnalogTV
+*hacks.xrayswarm.name:      XRaySwarm
+
+! obsolete, but still used by xscreensaver-demo-Xm.
+*hacks.documentation.isInstalled: True
+
+! (xrdb prevention kludge: whole file) */

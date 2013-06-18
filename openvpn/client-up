@@ -1,0 +1,5 @@
+#!/bin/bash
+# dmjp
+
+/sbin/dhclient -v $1 &
+

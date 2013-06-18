@@ -1,0 +1,11 @@
+# $Id: 70-persistent-net.rules 21 2013-12-22 02:57:31Z dave $
+# dmjp
+
+# pi's master usb wifi interface
+# 7392:7811 Edimax Technology Co., Ltd EW-7811Un 802.11n Wireless Adapter [Realtek RTL8188CUS]
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="80:1f:02:be:fb:64", NAME="wifi1"
+
+# pi's managed usb wifi interface
+# 148f:5370 Ralink Technology, Corp. RT5370 Wireless Adapter
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="7c:dd:90:50:58:9c", NAME="wifi0"
+

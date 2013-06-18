@@ -1,0 +1,17 @@
+# Please read /usr/share/doc/initscripts-*/sysconfig.txt
+# for the documentation of these parameters.
+BOOTPROTO=dhcp
+TYPE=Wireless
+PEERDNS=yes
+ESSID=PJP
+MODE=Managed
+RATE=auto
+DNS1=127.0.0.1
+HWADDR=7c:dd:90:50:58:9c
+DHCP_HOSTNAME=pi
+NM_CONTROLLED=no
+IPV6INIT=no
+ONBOOT=no
+USERCTL=no
+NAME=wifi0
+CHANNEL=

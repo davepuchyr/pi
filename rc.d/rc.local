@@ -1,0 +1,82 @@
+#!/bin/bash
+# dmjp
+
+echo "entered $0"
+
+# export just for line-by-line commandline debugging
+export PHY=wifi1
+export TAP=tap1 # must match /etc/openvpn/openvpn.conf
+export EXTIF=wifi0
+#export EXTIF=eth0
+export INTIF=$PHY
+export VPNIF=$TAP
+
+#export EXTIP=$(ip -o -4 addr show $EXTIF | cut -d' ' -f7 | cut -d'/' -f1)
+export EXTGW=$(ip route | fgrep default | fgrep $EXTIF | cut -d' ' -f3)
+
+# create tap virtual adapter
+openvpn --mktun --dev $TAP 
+
+# forward
+sysctl -w net.ipv4.ip_forward=1
+
+iptables -t nat -A POSTROUTING -o $VPNIF -j MASQUERADE
+iptables -A FORWARD -i $VPNIF -o $INTIF -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i $INTIF -o $VPNIF -j ACCEPT
+
+# prevent PHY from re-routing if the vpn is up and start the vpn if it's down
+ETCDIR=/etc/dhcp
+HOOK=$ETCDIR/dhclient-enter-hooks
+NAP=20
+
+cat <<EOS > $HOOK
+#!/bin/bash
+# dmjp: written by $0
+
+echo "entered $HOOK"
+
+if [ "\${interface}" != "$TAP" ] && [ "\${interface}" != "$PHY" ]; then
+   if ping -q -c 1 -I $TAP 8.8.8.8; then
+      echo "vpn is up; short-circuiting dhclient-script"
+      exit_status=1
+   else
+      if [[ -e ${HOOK}.lock ]]; then
+         echo "${HOOK}.lock exists, so not restarting services"
+      else
+         echo "vpn is down; locking $INTIF for kick-off"
+         touch ${HOOK}.lock
+
+         echo "deleting vpn route def1"
+         ip route del 0.0.0.0/1 2> /dev/null
+
+         echo "restarting \${interface} related services"
+         systemctl restart named.service 
+         systemctl restart chronyd.service 
+
+         echo "kicking $INTIF"
+         ifdown $INTIF ; ifup $INTIF
+
+         ( echo "$HOOK restarting $INTIF related services in $NAP seconds to give $INTIF time" ; sleep $NAP ; \\
+           systemctl restart hostapd.service ; \\
+           systemctl restart dhcpd.service ; \\
+           systemctl restart openvpn@client.service ; \\
+           echo "restarting nagios in $NAP seconds to give time to openvpn" ; sleep $NAP ; \\
+           systemctl restart httpd.service ; \\
+           systemctl restart nagios.service ; \\
+           rm -fv ${HOOK}.lock ) &
+      fi
+   fi
+fi
+echo "exiting $HOOK"
+EOS
+
+chmod a+x $HOOK
+
+# kick-it
+rm -fv ${HOOK}.lock
+
+echo "kicking $EXTIF"
+dhclient -r -v $EXTIF ; ifdown $EXTIF ; ifup $EXTIF ; iwconfig $EXTIF power off
+
+echo "exiting $0"
+

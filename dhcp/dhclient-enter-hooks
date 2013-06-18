@@ -1,0 +1,38 @@
+#!/bin/bash
+# dmjp: written by /etc/rc.d/rc.local
+
+echo "entered /etc/dhcp/dhclient-enter-hooks"
+
+if [ "${interface}" != "tap1" ] && [ "${interface}" != "wifi1" ]; then
+   if ping -q -c 1 -I tap1 8.8.8.8; then
+      echo "vpn is up; short-circuiting dhclient-script"
+      exit_status=1
+   else
+      if [[ -e /etc/dhcp/dhclient-enter-hooks.lock ]]; then
+         echo "/etc/dhcp/dhclient-enter-hooks.lock exists, so not restarting services"
+      else
+         echo "vpn is down; locking wifi1 for kick-off"
+         touch /etc/dhcp/dhclient-enter-hooks.lock
+
+         echo "deleting vpn route def1"
+         ip route del 0.0.0.0/1 2> /dev/null
+
+         echo "restarting ${interface} related services"
+         systemctl restart named.service 
+         systemctl restart chronyd.service 
+
+         echo "kicking wifi1"
+         ifdown wifi1 ; ifup wifi1
+
+         ( echo "/etc/dhcp/dhclient-enter-hooks restarting wifi1 related services in 20 seconds to give wifi1 time" ; sleep 20 ; \
+           systemctl restart hostapd.service ; \
+           systemctl restart dhcpd.service ; \
+           systemctl restart openvpn@client.service ; \
+           echo "restarting nagios in 20 seconds to give time to openvpn" ; sleep 20 ; \
+           systemctl restart httpd.service ; \
+           systemctl restart nagios.service ; \
+           rm -fv /etc/dhcp/dhclient-enter-hooks.lock ) &
+      fi
+   fi
+fi
+echo "exiting /etc/dhcp/dhclient-enter-hooks"

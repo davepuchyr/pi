@@ -1,0 +1,17 @@
+[Unit]
+Description=WPA Supplicant daemon
+Before=network.target
+# dmjp After=syslog.target 
+# terrible specification of wifi0 here and in /etc/sysconfig/wpa_supplicant
+Requires=sys-subsystem-net-devices-wifi0.device
+After=sys-subsystem-net-devices-wifi0.device
+
+[Service]
+Type=dbus
+BusName=fi.w1.wpa_supplicant1
+EnvironmentFile=-/etc/sysconfig/wpa_supplicant
+ExecStart=/usr/sbin/wpa_supplicant -u -f /var/log/wpa_supplicant.log -c /etc/wpa_supplicant/wpa_supplicant.conf $INTERFACES $DRIVERS $OTHER_ARGS
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# export just for line-by-line commandline debugging
+# br1 and tap1 for client
+export BR=br1
+export PHY=wlan0
+export TAP=tap1 # must match /etc/openvpn/openvpn.conf
+export INTIF=$BR
+export INTIF=$BR
+export EXTIF=eth0
+
+# create virtual interfaces
+tunctl -t $TAP
+ip link add $BR type bridge
+
+# be slutty
+ip link set dev $PHY promisc on
+ip link set dev $TAP promisc on
+
+# enslave
+ip link set $PHY master $BR
+ip link set $TAP master $BR
+
+# bridge
+ip link set $BR up
+
+# forward physical...
+sysctl -w net.ipv4.ip_forward=1
+
+iptables -t nat -A POSTROUTING -o $EXTIF -j MASQUERADE
+iptables -A FORWARD -i $EXTIF -o $INTIF -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i $INTIF -o $EXTIF -j ACCEPT
+
+# ...and vpn
+iptables -A INPUT -i $TAP -j ACCEPT
+iptables -A INPUT -i $BR -j ACCEPT
+iptables -A FORWARD -i $BR -j ACCEPT
+
+# claim $TAP
+systemctl start openvpn@client.service
+
+# invoke the wisdom that took 10 years to garner
+dhclient -timeout 1 $TAP # UGLY: kick bridge forwarding on $TAP...
+dhclient -r $TAP # ...and undo it
+
+# give BR an ip address just for troubleshooting (this is confirmed absolutely not necessary)
+dhclient -v $BR
+
+# restart hostapd otherwise clients get into an infinite loop of association/dissociation
+systemctl restart hostapd.service
+
+# show off
+brctl showstp $BR
+

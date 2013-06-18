@@ -1,0 +1,8 @@
+Pidora 18 (Raspberry Pi Fedora Remix)
+Kernel \r on an \m (\l)
+
+dmjp:
+wireless interfaces and openvpn started in /etc/rc.local
+openvpn is in visudo
+systemd version 201 (for updated udev)
+
