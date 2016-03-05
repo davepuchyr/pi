@@ -1,5 +1,6 @@
 **/*~
 **/*.cache
+**/*.old
 **/*.save
 *.pem
 *cert
