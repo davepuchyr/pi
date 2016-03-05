@@ -1,3 +1,6 @@
+**/*~
+**/*.cache
+**/*.save
 *.pem
 *cert
 *crt
@@ -5,4 +8,7 @@
 *shadow*
 named.conf.pre*
 pki
+mail/sendmail.cf.bak
+mail/client-info*
+resolv.conf.save
 
