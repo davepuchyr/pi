@@ -1,6 +1,11 @@
 #!/bin/bash
 # dmjp
 
+
+exit 0 # disable openvpn
+
+
+
 echo "entered $0"
 
 # export just for line-by-line commandline debugging
