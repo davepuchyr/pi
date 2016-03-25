@@ -27,6 +27,7 @@ print "ip=$ip dnsip=$dnsip\n";
 exit $ERRORS{'OK'} if ( $ip eq $dnsip );
 
 my $iproute = `ip route`;
+my $ifconfig = `ifconfig`;
 my $df = `df -h`;
 my $arp = `arp -a`;
 my $top = `top -b -n 1`;
@@ -35,6 +36,8 @@ IP address reported by curl: $ip
  IP address reported by DNS: $dnsip
 
 $iproute
+
+$ifconfig
 
 $df
 
