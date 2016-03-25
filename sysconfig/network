@@ -1,4 +1,4 @@
-HOSTNAME=localhost
+HOSTNAME=pi.anoxymous.com
 NETWORKING=yes
 NETWORKWAIT=1
 NTPSERVERARGS=iburst
