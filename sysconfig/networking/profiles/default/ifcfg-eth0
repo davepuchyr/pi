@@ -10,3 +10,6 @@ PEERDNS=yes
 
 DNS2=8.8.8.8
 DNS1=127.0.0.1
+
+# dmjp
+UPRATE=30mbit

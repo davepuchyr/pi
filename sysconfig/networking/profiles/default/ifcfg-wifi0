@@ -16,3 +16,6 @@ USERCTL=no
 NAME=wifi0
 DNS2=80.58.61.250
 CHANNEL=
+
+# dmjp
+UPRATE=30mbit
