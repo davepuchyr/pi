@@ -13,7 +13,7 @@ EXTIFs="wifi0 eth0"  # external (public) interfaces; primary first
 INTIFs="" # internal (private) interfaces
 
 RESOLV_SEARCH="search avaritia.com" # for /etc/resolv.conf
-RESOLV_DNS="nameserver 8.8.8.8\nnameserver 80.58.61.250\nnameserver 80.58.61.254" # \n delimited
+RESOLV_DNS="nameserver 127.0.0.1\nnameserver 8.8.8.8\nnameserver 80.58.61.250\n" # \n delimited
 
 #LOG_DROPPED=1       # log dropped packets
 
