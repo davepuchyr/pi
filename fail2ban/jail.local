@@ -1,0 +1,8 @@
+[DEFAULT]
+bantime = 86400
+ignoreip = 127.0.0.1/8 95.211.131.137/32
+
+[ssh-iptables]
+enabled = true
+maxretry = 3
+
