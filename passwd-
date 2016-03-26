@@ -40,3 +40,5 @@ nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
 named:x:25:25:Named:/var/named:/sbin/nologin
 systemd-journal-gateway:x:191:191:Journal Gateway:/:/usr/sbin/nologin
 nagios:x:991:988::/var/spool/nagios:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+dovecot:x:97:97:Dovecot IMAP server:/usr/libexec/dovecot:/sbin/nologin
