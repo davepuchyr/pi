@@ -4,8 +4,8 @@
 !            a screen saver and locker for the X window system
 !                            by Jamie Zawinski
 !
-!                              version 5.20-3.fc18.1302272234kf
-!                              28-Feb-2013
+!                              version 5.22-1.fc18
+!                              29-Jul-2013
 !
 ! See "man xscreensaver" for more info.  The latest version is always
 ! available at http://www.jwz.org/xscreensaver/
@@ -63,7 +63,6 @@
 *textFile:		/etc/fedora-release
 *textProgram:		fortune -s
 *textURL:		http://planet.fedoraproject.org/rss20.xml
-!*textURL:		http://www.livejournal.com/stats/latest-rss.bml
 
 *overlayTextForeground:	#FFFF00
 *overlayTextBackground:	#000000

@@ -42,7 +42,7 @@
 /home/[^/]*/\.Xauth.*	--	unconfined_u:object_r:xauth_home_t:s0
 /home/[^/]*/\.cache(/.*)?	unconfined_u:object_r:cache_home_t:s0
 /home/[^/]*/\.gnupg(/.+)?	unconfined_u:object_r:gpg_secret_t:s0
-/home/[^/]*/\.irssi(/.*)?	unconfined_u:object_r:irssi_home_t:s0
+/home/[^/]*/\.irssi(/.*)?	unconfined_u:object_r:irc_home_t:s0
 /home/[^/]*/\.adobe(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.gnash(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.pulse(/.*)?	unconfined_u:object_r:pulseaudio_home_t:s0
@@ -55,18 +55,19 @@
 /home/[^/]*/\.gconf(d)?(/.*)?	unconfined_u:object_r:gconf_home_t:s0
 /home/[^/]*/\.config(/.*)?	unconfined_u:object_r:config_home_t:s0
 /home/[^/]*/\.gnome2(/.*)?	unconfined_u:object_r:gnome_home_t:s0
-/home/[^/]*/irclogs(/.*)?	unconfined_u:object_r:irssi_home_t:s0
 /home/[^/]*/\.kismet(/.*)?	unconfined_u:object_r:kismet_home_t:s0
 /home/[^/]*/\.galeon(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.spicec(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/Maildir(/.*)?	unconfined_u:object_r:mail_home_rw_t:s0
 /home/[^/]*/\.screen(/.*)?	unconfined_u:object_r:screen_home_t:s0
 /home/[^/]*/\.vmware(/.*)?	unconfined_u:object_r:vmware_file_t:s0
+/home/[^/]*/POkemon.*(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.vmware[^/]*/.*\.cfg	--	unconfined_u:object_r:vmware_conf_t:s0
 /home/[^/]*/\.forward[^/]*	--	unconfined_u:object_r:mail_home_t:s0
 /home/[^/]*/\.Private(/.*)?	unconfined_u:object_r:ecryptfs_t:s0
 /home/[^/]*/\.mozilla(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.phoenix(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
+/home/[^/]*/\.icedtea(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.mplayer(/.*)?	unconfined_u:object_r:mplayer_home_t:s0
 /home/[^/]*/\.libvirt(/.*)?	unconfined_u:object_r:virt_home_t:s0
 /home/[^/]*/\.fonts\.d(/.*)?	unconfined_u:object_r:user_fonts_config_t:s0
@@ -88,12 +89,16 @@
 /home/[^/]*/\.fontconfig(/.*)?	unconfined_u:object_r:user_fonts_cache_t:s0
 /home/[^/]*/\.fonts/auto(/.*)?	unconfined_u:object_r:user_fonts_cache_t:s0
 /home/[^/]*/missfont\.log.*	unconfined_u:object_r:thumb_home_t:s0
+/home/[^/]*/\.cache/dconf(/.*)?	unconfined_u:object_r:config_home_t:s0
 /home/[^/]*/\.local/share(/.*)?	unconfined_u:object_r:data_home_t:s0
 /home/[^/]*/\.thunderbird(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.cache/wocky(/.*)?	unconfined_u:object_r:telepathy_gabble_cache_home_t:s0
 /home/[^/]*/\.fonts\.cache-.*	--	unconfined_u:object_r:user_fonts_cache_t:s0
 /home/[^/]*/\.ICEauthority.*	--	unconfined_u:object_r:iceauth_home_t:s0
+/home/[^/]*/\.cache\mozilla(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.gcjwebplugin(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
+/home/[^/]*/\.gcjwebplugin(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
+/home/[^/]*/\.grl-podcasts(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.polipo-cache(/.*)?	unconfined_u:object_r:polipo_cache_home_t:s0
 /home/[^/]*/\.config/pulse(/.*)?	unconfined_u:object_r:pulseaudio_home_t:s0
 /home/[^/]*/\.spamassassin(/.*)?	unconfined_u:object_r:spamc_home_t:s0
@@ -101,6 +106,7 @@
 /home/[^/]*/\.icedteaplugin(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/zimbrauserdata(/.*)?	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.cache/libvirt(/.*)?	unconfined_u:object_r:virt_home_t:s0
+/home/[^/]*/\.cache/chromium(/.*)?	unconfined_u:object_r:chrome_sandbox_home_t:s0
 /home/[^/]*/\.config/libvirt(/.*)?	unconfined_u:object_r:virt_home_t:s0
 /home/[^/]*/VirtualMachines(/.*)?	unconfined_u:object_r:virt_home_t:s0
 /home/[^/]*/\.xsession-errors.*	--	unconfined_u:object_r:xdm_home_t:s0
@@ -115,6 +121,7 @@
 /home/[^/]*/\.cache/gnome-boxes(/.*)?	unconfined_u:object_r:virt_home_t:s0
 /home/[^/]*/\.telepathy-sunshine(/.*)?	unconfined_u:object_r:telepathy_sunshine_home_t:s0
 /home/[^/]*/\.cache/libvirt/qemu(/.*)?	unconfined_u:object_r:svirt_home_t:s0
+/home/[^/]*/\.cache/google-chrome(/.*)?	unconfined_u:object_r:chrome_sandbox_home_t:s0
 /home/[^/]*/\.config/libvirt/qemu(/.*)?	unconfined_u:object_r:svirt_home_t:s0
 /home/[^/]*/VirtualMachines/isos(/.*)?	unconfined_u:object_r:virt_content_t:s0
 /home/[^/]*/\.local/share/keyrings(/.*)?	unconfined_u:object_r:gkeyringd_gnome_home_t:s0
@@ -126,6 +133,7 @@
 /home/[^/]*/\.local/share/telepathy/mission-control(/.*)?	unconfined_u:object_r:telepathy_mission_control_data_home_t:s0
 /home/[^/]*	-d	unconfined_u:object_r:user_home_dir_t:s0
 /home/[^/]*	-l	unconfined_u:object_r:user_home_dir_t:s0
+/home/[^/]*/abc	--	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.shosts	unconfined_u:object_r:ssh_home_t:s0
 /home/[^/]*/\.mailrc	--	unconfined_u:object_r:mail_home_t:s0
 /home/[^/]*/\.my\.cnf	--	unconfined_u:object_r:mysqld_home_t:s0
@@ -134,6 +142,7 @@
 /home/[^/]*/\.rhosts	--	unconfined_u:object_r:rlogind_home_t:s0
 /home/[^/]*/\.ircmotd	--	unconfined_u:object_r:irc_home_t:s0
 /home/[^/]*/\.k5login	--	unconfined_u:object_r:krb5_home_t:s0
+/home/[^/]*/\.manpath	--	unconfined_u:object_r:mandb_home_t:s0
 /home/[^/]*/\.asoundrc	--	unconfined_u:object_r:alsa_home_t:s0
 /home/[^/]*/\.esd_auth	--	unconfined_u:object_r:pulseaudio_home_t:s0
 /home/[^/]*/\.screenrc	--	unconfined_u:object_r:screen_home_t:s0
@@ -147,6 +156,7 @@
 /home/[^/]*/\.pulse-cookie	--	unconfined_u:object_r:pulseaudio_home_t:s0
 /home/[^/]*/\.grl-bookmarks	unconfined_u:object_r:gstreamer_home_t:s0
 /home/[^/]*/\.grl-bookmarks	unconfined_u:object_r:gstreamer_home_t:s0
+/home/[^/]*/\.gnashpluginrc	unconfined_u:object_r:mozilla_home_t:s0
 /home/[^/]*/\.gnupg/log-socket	unconfined_u:object_r:gpg_agent_tmp_t:s0
 /home/[^/]*/\.grl-metadata-store	unconfined_u:object_r:gstreamer_home_t:s0
 /home/[^/]*/\.google_authenticator	unconfined_u:object_r:auth_home_t:s0

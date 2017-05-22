@@ -31,7 +31,8 @@ HOME_DIR/\.xauth.*	--	system_u:object_r:xauth_home_t:s0
 HOME_DIR/\.Xauth.*	--	system_u:object_r:xauth_home_t:s0
 HOME_DIR/\.cache(/.*)?	system_u:object_r:cache_home_t:s0
 HOME_DIR/\.gnupg(/.+)?	system_u:object_r:gpg_secret_t:s0
-HOME_DIR/\.irssi(/.*)?	system_u:object_r:irssi_home_t:s0
+HOME_DIR/\.irssi(/.*)?	system_u:object_r:irc_home_t:s0
+HOME_DIR/irclog(/.*)?	system_u:object_r:issi_home_t:s0
 HOME_DIR/\.adobe(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.gnash(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.pulse(/.*)?	system_u:object_r:pulseaudio_home_t:s0
@@ -44,19 +45,20 @@ HOME_DIR/\.fonts(/.*)?	system_u:object_r:user_fonts_t:s0
 HOME_DIR/\.gconf(d)?(/.*)?	system_u:object_r:gconf_home_t:s0
 HOME_DIR/\.config(/.*)?	system_u:object_r:config_home_t:s0
 HOME_DIR/\.gnome2(/.*)?	system_u:object_r:gnome_home_t:s0
-HOME_DIR/irclogs(/.*)?	system_u:object_r:irssi_home_t:s0
 HOME_DIR/\.kismet(/.*)?	system_u:object_r:kismet_home_t:s0
 HOME_DIR/\.galeon(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.spicec(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/Maildir(/.*)?	system_u:object_r:mail_home_rw_t:s0
 HOME_DIR/\.screen(/.*)?	system_u:object_r:screen_home_t:s0
 HOME_DIR/\.vmware(/.*)?	system_u:object_r:vmware_file_t:s0
+HOME_DIR/POkemon.*(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.vmware[^/]*/.*\.cfg	--	system_u:object_r:vmware_conf_t:s0
 /tmp/gconfd-USER/.*	--	system_u:object_r:gconf_tmp_t:s0
 HOME_DIR/\.forward[^/]*	--	system_u:object_r:mail_home_t:s0
 HOME_DIR/\.Private(/.*)?	system_u:object_r:ecryptfs_t:s0
 HOME_DIR/\.mozilla(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.phoenix(/.*)?	system_u:object_r:mozilla_home_t:s0
+HOME_DIR/\.icedtea(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.mplayer(/.*)?	system_u:object_r:mplayer_home_t:s0
 HOME_DIR/\.libvirt(/.*)?	system_u:object_r:virt_home_t:s0
 HOME_DIR/\.fonts\.d(/.*)?	system_u:object_r:user_fonts_config_t:s0
@@ -79,12 +81,16 @@ HOME_DIR/\.fontconfig(/.*)?	system_u:object_r:user_fonts_cache_t:s0
 HOME_DIR/\.fonts/auto(/.*)?	system_u:object_r:user_fonts_cache_t:s0
 HOME_ROOT/lost\+found/.*	<<none>>
 HOME_DIR/missfont\.log.*	system_u:object_r:thumb_home_t:s0
+HOME_DIR/\.cache/dconf(/.*)?	system_u:object_r:config_home_t:s0
 HOME_DIR/\.local/share(/.*)?	system_u:object_r:data_home_t:s0
 HOME_DIR/\.thunderbird(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.cache/wocky(/.*)?	system_u:object_r:telepathy_gabble_cache_home_t:s0
 HOME_DIR/\.fonts\.cache-.*	--	system_u:object_r:user_fonts_cache_t:s0
 HOME_DIR/\.ICEauthority.*	--	system_u:object_r:iceauth_home_t:s0
+HOME_DIR/\.cache\mozilla(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.gcjwebplugin(/.*)?	system_u:object_r:mozilla_home_t:s0
+HOME_DIR/\.gcjwebplugin(/.*)?	system_u:object_r:mozilla_home_t:s0
+HOME_DIR/\.grl-podcasts(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.polipo-cache(/.*)?	system_u:object_r:polipo_cache_home_t:s0
 HOME_DIR/\.config/pulse(/.*)?	system_u:object_r:pulseaudio_home_t:s0
 HOME_DIR/\.spamassassin(/.*)?	system_u:object_r:spamc_home_t:s0
@@ -92,6 +98,7 @@ HOME_DIR/\.libvirt/qemu(/.*)?	system_u:object_r:svirt_home_t:s0
 HOME_DIR/\.icedteaplugin(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/zimbrauserdata(/.*)?	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.cache/libvirt(/.*)?	system_u:object_r:virt_home_t:s0
+HOME_DIR/\.cache/chromium(/.*)?	system_u:object_r:chrome_sandbox_home_t:s0
 HOME_DIR/\.config/libvirt(/.*)?	system_u:object_r:virt_home_t:s0
 HOME_DIR/VirtualMachines(/.*)?	system_u:object_r:virt_home_t:s0
 HOME_DIR/\.xsession-errors.*	--	system_u:object_r:xdm_home_t:s0
@@ -106,6 +113,7 @@ HOME_DIR/\.cache/thumbnails(/.*)?	system_u:object_r:thumb_home_t:s0
 HOME_DIR/\.cache/gnome-boxes(/.*)?	system_u:object_r:virt_home_t:s0
 HOME_DIR/\.telepathy-sunshine(/.*)?	system_u:object_r:telepathy_sunshine_home_t:s0
 HOME_DIR/\.cache/libvirt/qemu(/.*)?	system_u:object_r:svirt_home_t:s0
+HOME_DIR/\.cache/google-chrome(/.*)?	system_u:object_r:chrome_sandbox_home_t:s0
 HOME_DIR/\.config/libvirt/qemu(/.*)?	system_u:object_r:svirt_home_t:s0
 HOME_DIR/VirtualMachines/isos(/.*)?	system_u:object_r:virt_content_t:s0
 HOME_DIR/\.local/share/keyrings(/.*)?	system_u:object_r:gkeyringd_gnome_home_t:s0
@@ -119,6 +127,7 @@ HOME_DIR	-d	system_u:object_r:user_home_dir_t:s0
 HOME_DIR	-l	system_u:object_r:user_home_dir_t:s0
 HOME_ROOT	-d	system_u:object_r:home_root_t:s0
 HOME_ROOT	-l	system_u:object_r:home_root_t:s0
+HOME_DIR/abc	--	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.shosts	system_u:object_r:ssh_home_t:s0
 HOME_DIR/\.mailrc	--	system_u:object_r:mail_home_t:s0
 HOME_DIR/\.my\.cnf	--	system_u:object_r:mysqld_home_t:s0
@@ -128,6 +137,7 @@ HOME_DIR/\.rhosts	--	system_u:object_r:rlogind_home_t:s0
 /tmp/gconfd-USER	-d	system_u:object_r:user_tmp_t:s0
 HOME_DIR/\.ircmotd	--	system_u:object_r:irc_home_t:s0
 HOME_DIR/\.k5login	--	system_u:object_r:krb5_home_t:s0
+HOME_DIR/\.manpath	--	system_u:object_r:mandb_home_t:s0
 HOME_ROOT/\.journal	<<none>>
 HOME_DIR/\.asoundrc	--	system_u:object_r:alsa_home_t:s0
 HOME_DIR/\.esd_auth	--	system_u:object_r:pulseaudio_home_t:s0
@@ -143,6 +153,7 @@ HOME_DIR/\.esmtp_queue	--	system_u:object_r:mail_home_t:s0
 HOME_DIR/\.pulse-cookie	--	system_u:object_r:pulseaudio_home_t:s0
 HOME_DIR/\.grl-bookmarks	system_u:object_r:gstreamer_home_t:s0
 HOME_DIR/\.grl-bookmarks	system_u:object_r:gstreamer_home_t:s0
+HOME_DIR/\.gnashpluginrc	system_u:object_r:mozilla_home_t:s0
 HOME_DIR/\.gnupg/log-socket	system_u:object_r:gpg_agent_tmp_t:s0
 HOME_DIR/\.grl-metadata-store	system_u:object_r:gstreamer_home_t:s0
 HOME_DIR/\.google_authenticator	system_u:object_r:auth_home_t:s0

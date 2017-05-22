@@ -14,8 +14,8 @@
 !            a screen saver and locker for the X window system
 !                            by Jamie Zawinski
 !
-!                              version 5.20-3.fc18.1302272234kf
-!                              28-Feb-2013
+!                              version 5.22-1.fc18
+!                              29-Jul-2013
 !
 ! See "man xscreensaver" for more info.  The latest version is always
 ! available at http://www.jwz.org/xscreensaver/
@@ -73,7 +73,6 @@
 *textFile:		/etc/fedora-release
 *textProgram:		fortune -s
 *textURL:		http://planet.fedoraproject.org/rss20.xml
-!*textURL:		http://www.livejournal.com/stats/latest-rss.bml
 
 *overlayTextForeground:	#FFFF00
 *overlayTextBackground:	#000000
@@ -366,7 +365,11 @@ GetViewPortIsFullOfLies: False
   GL: 				rubikblocks -root			    \n\
   GL: 				companioncube -root			    \n\
   GL: 				hilbert -root				    \n\
-  GL: 				tronbit -root				    \n
+  GL: 				tronbit -root				    \n\
+				hexadrop -root				    \n\
+  GL: 				kaleidocycle -root			    \n\
+  GL: 				quasicrystal -root			    \n\
+  GL: 				unknownpleasures -root			    \n
 
 
 
@@ -425,7 +428,7 @@ XScreenSaver.bourneShell:		/bin/sh
 *passwd.uname:                  True
 
 *splash.heading.label:		XScreenSaver %s
-*splash.body.label:		Copyright © 1991-2012 by
+*splash.body.label:		Copyright © 1991-2013 by
 *splash.body2.label:		Jamie Zawinski <jwz@jwz.org>
 *splash.demo.label:		Settings
 *splash.help.label:		Help
@@ -485,6 +488,7 @@ XScreenSaver.bourneShell:		/bin/sh
 *hacks.nerverot.name:       NerveRot
 *hacks.noseguy.name:        NoseGuy
 *hacks.popsquares.name:     PopSquares
+*hacks.quasicrystal.name:   QuasiCrystal
 *hacks.rd-bomb.name:        RDbomb
 *hacks.rdbomb.name:         RDbomb
 *hacks.rotzoomer.name:      RotZoomer
@@ -501,6 +505,7 @@ XScreenSaver.bourneShell:		/bin/sh
 *hacks.timetunnel.name:     TimeTunnel
 *hacks.topblock.name:       TopBlock
 *hacks.tronbit.name:        TronBit
+*hacks.unknownpleasures.name:UnknownPleasures
 *hacks.vidwhacker.name:     VidWhacker
 *hacks.webcollage.name:     WebCollage
 *hacks.whirlwindwarp.name:  WhirlWindWarp

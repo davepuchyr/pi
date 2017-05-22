@@ -9,8 +9,7 @@
 AUTOCREATE_SERVER_KEYS=YES
 
 # Do not change this option unless you have hardware random
-# generator and you REALLY know what you are doing/
+# generator and you REALLY know what you are doing
 
-export SSH_USE_STRONG_RNG=0
-# export SSH_USE_STRONG_RNG=1
- 
+SSH_USE_STRONG_RNG=0
+# SSH_USE_STRONG_RNG=1

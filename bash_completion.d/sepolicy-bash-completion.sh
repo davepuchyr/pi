@@ -81,7 +81,7 @@ _sepolicy () {
                [communicate]='-h --help -s --source -t --target -c --class -S --sourceaccess -T --targetaccess'
                [generate]='-a --admin --admin_user --application --cgi --confined_admin --customize  -d --domain --dbus --desktop_user -h --help --inetd --init -n --name --newtype -p --path --sandbox -T --test --term_user -u --user -w --writepath --x_user'
                [interface]='-h --help -a --list_admin" -u --list_user -l --list'
-               [manpage]='-h --help -p --path -a -all -o --os -d --domain -w --web'
+               [manpage]='-h --help -p --path -a -all -o --os -d --domain -w --web -r --root'
                [network]='-h --help -d --domain -l --list -p --port -t --type '
                [transition]='-h --help -s --source -t --target'
         )
@@ -155,6 +155,10 @@ _sepolicy () {
         elif [ "$verb" = "manpage" ]; then
             if [ "$prev" = "-d" -o "$prev" = "--domain" ]; then
                 COMPREPLY=( $(compgen -W "$( __get_all_domains ) " -- "$cur") )
+                return 0
+            elif test "$prev" = "-r" || test "$prev" = "--root" ; then
+                COMPREPLY=( $( compgen -d -- "$cur") )
+                compopt -o filenames
                 return 0
             elif [ "$prev" = "-o" -o "$prev" = "--os" ]; then
                 return 0
